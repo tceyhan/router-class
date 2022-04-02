@@ -1,11 +1,14 @@
 
 
 const Navbar = () => {
-  return (
-    <div>
-        
-    </div>
-  )
-}
+    return (
+      <div>
+          <a href="/">Home</a>
+          <a href="/about">About</a>
+          <a href="/products">Products</a>
+      </div>
+    )
+  }
+  
 
 export default Navbar;
