@@ -1,10 +1,8 @@
 import { useEffect, useState } from "react";
-import styles from "./Products.module.css";
 import { Link } from "react-router-dom";
-
+import styles from "./Product.module.css";
 
 const Products = () => {
-
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
@@ -16,16 +14,21 @@ const Products = () => {
   return (
     <div>
       <h2>Product Page</h2>
-      <div>
+      <div className={styles.products}>
         {products.map((each) => (
-          <Link to={`/details`} key={each.id} className={styles.product}>
+          <Link
+            to={`details/${each.id}`}
+            key={each.id}
+            className={styles.product}
+          >
             <h6>{each.category}</h6>
             <p>{each.title}</p>
-            <img style={{width:"100px"}} src={each.image} alt="" />
+            <img style={{ width: "100px" }} src={each.image} alt="" />
           </Link>
         ))}
       </div>
     </div>
   );
 };
+
 export default Products;
